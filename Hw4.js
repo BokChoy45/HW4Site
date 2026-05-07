@@ -108,7 +108,7 @@ function validateBdate() {
             }
 }
 
-//SSN Validation
+// Validation
 function validateSSN() {
     const ss = document.getElementById("ss").value;
     const SSpattern = /^[0-9]{3}-?[0-9]{2}-?[0-9]{4}$/;
@@ -402,3 +402,39 @@ function validateInfo() {
         showAlert();
     }
 }
+
+//Cookies Expire
+function setCookie(name, cvalue, expireDays) {
+    var day = new Date();
+    day.setTime(day.getTime() + (expireDays * 24 * 60 * 60 * 1000));
+    var expires = "expires=" + day.toUTCString();
+    document.cookie = name + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+//Retreiving Cookie value
+function getCookie(name) {
+    var cookieName = name + "=";
+    var cookie = document.cookie.split(';');
+
+    for (var i = 0; i < cookie.length; i++) {
+        var cookie = cookies[i].trim();
+        if (cookie.indexOf(cookieName) == 0) {
+            return cookie.substring(cookieName.length, cookie.length);
+        }
+    }
+    return "";
+}
+
+var inputs = [
+    {id: "fname", cookieName: "firstName"},
+    {id: "midname", cookieName: "midName"},
+    {id: "lanme", cookieName: "lastName"},
+    {id: "bdate", cookieName: "bdate"},
+    {id: "ss", cookieName: "ss"},
+    {id: "email", cookieName: "email"},
+    {id: "address1", cookieName: "address1"},
+    {id: "city", cookieName: "city"},
+    {id: "zip", cookieName: "zip"},
+    {id: "user", cookieName: "username"},
+];
+
