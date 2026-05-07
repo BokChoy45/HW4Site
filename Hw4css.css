@@ -1,0 +1,122 @@
+body {
+    background-color: #cab8a9;
+    font-family: courier new;
+}
+
+input {
+    background-color: rgba(170, 182, 146, 0.712);
+}
+
+h1 {
+    text-shadow: 3px 3px 3px slategray;
+}
+
+select {
+    background-color: rgba(170, 182, 146, 0.712);
+}
+
+textarea {
+    background-color: rgba(170, 182, 146, 0.712);
+    border-color: black;
+    border-width: 2px;
+}
+
+form {
+    align-content: center;
+}
+
+footer {
+    text-align: center;
+}
+
+.foot { 
+    display: flex;
+    flex-direction: column; 
+    min-height: 100vh; 
+    justify-content: flex-end;
+}
+
+.error{
+    display: block;
+    color: red;
+    text-shadow: .5px .5px .5px dimgray;
+    font-size: 15px;
+    margin-top: 3px;
+}
+
+.pass-errorMessage {
+    font-family: "optima", Courier New;
+    font-size: 15px;
+    text-shadow: .5px .5px .5px dimgray;
+    color: red;
+}
+
+#review {
+    margin-top: 5px;
+}
+
+table.output,
+tr.output,
+td.output {
+    width: 500px;
+    background-color: rgba(170, 182, 146, 0.712);
+    padding: 10px;
+    border-spacing: 2px;
+    border-radius: 20px;
+    color: black;
+}
+
+td.outputdata {
+    width: 500px;
+    background-color: rgba(138, 153, 108, 0.712);;
+    padding: 10px;
+    border-spacing: 2px;
+}
+
+/*Alert Box*/
+
+#alertBox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: transparent;
+}
+
+#alertContent {
+    background-color: whitesmoke;
+    border-radius: 10px;
+    width: 300px;
+    height: 130px;
+    margin: auto;
+    margin-top: 20%;
+    padding: 30px;
+    text-align: center;
+}
+
+#alertContent h2 {
+    font-size: 20px; 
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: normal;
+}
+
+#closeAlert {
+    background-color: white;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    font-size: 15px;
+    font-weight: bold;
+    height: 20px;
+    width: 80px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
