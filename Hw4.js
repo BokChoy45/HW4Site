@@ -439,7 +439,7 @@ var inputs = [
 ];
 
 inputs.forEach(function (input) {
-    var inputElement = document.getElement(input.id);
+    var inputElement = document.getElementById(input.id);
 
     var cookieValue = getCookie(input.cookieName);
     if (cookieValue !== "") {
