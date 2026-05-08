@@ -401,6 +401,7 @@ function validateInfo() {
         submitButton.disabled = true
         showAlert();
     }
+    return valid;
 }
 
 //Cookies Expire
