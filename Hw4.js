@@ -526,5 +526,6 @@ function submitFormWithFetch() {
     })
     .catch(error => {
         console.error("Submission error:", error);
+        showAlert();
     })
 }
