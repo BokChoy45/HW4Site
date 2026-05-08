@@ -490,6 +490,7 @@ function deleteAllCookies() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+    const rememberMe = document.getElementById("remember-me").checked;
 
     if (!rememberMe) {
         deleteAllCookies();
