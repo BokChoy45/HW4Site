@@ -414,7 +414,7 @@ function setCookie(name, cvalue, expireDays) {
 //Retreiving Cookie value
 function getCookie(name) {
     var cookieName = name + "=";
-    var cookie = document.cookie.split(';');
+    var cookies = document.cookie.split(';');
 
     for (var i = 0; i < cookie.length; i++) {
         var cookie = cookies[i].trim();
