@@ -222,19 +222,18 @@ Description - This medical form is a assignment for MIS3371. This form is meant 
                     title = "Please Re-enter Password" onblur = "confirmPass()" oninput = "confirmPass()" 
                     onfocus = "confirmPass()" required>
                 <span class = "error" id = "pass2-error"></span></td></tr>
-
-        <tr>
-            <td><td><input type = "reset" name = "reset" id = "reset" value = "Clear All">
-            <input type= "button" name = "review" id = "review" value = "Review" onclick= "reviewInfo()">
-            <input type= "button" name = "validate" id = "validate" value = "Validate" onclick = "validateInfo()">
-            <input type = "submit" name = "submit" id = "submit" value = "Submit" disabled></td></td></tr>
-            
         
         <tr>
             <td><td>
                 <label for = "remember-me">Remember Me:</label>
                 <input type = "checkbox" id = "remember-me" name = "remember-me" checked/></td></td>
-        </tr>       
+        </tr> 
+        
+        <tr>
+            <td><td><input type = "reset" name = "reset" id = "reset" value = "Clear All">
+            <input type= "button" name = "review" id = "review" value = "Review" onclick= "reviewInfo()">
+            <input type= "button" name = "validate" id = "validate" value = "Validate" onclick = "validateInfo()">
+            <input type = "submit" name = "submit" id = "submit" value = "Submit" disabled></td></td></tr>                  
     </table> 
         
         <div class = "pass-errorMessage">
