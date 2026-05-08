@@ -428,8 +428,8 @@ function getCookie(name) {
 var inputs = [
     {id: "fname", cookieName: "firstName"},
     {id: "midname", cookieName: "midName"},
-    {id: "lanme", cookieName: "lastName"},
-    {id: "bdate", cookieName: "bdate"},
+    {id: "lname", cookieName: "lastName"},
+    {id: "bdate", cookieName: "bDate"},
     {id: "ss", cookieName: "ss"},
     {id: "email", cookieName: "email"},
     {id: "address1", cookieName: "address1"},
@@ -438,3 +438,62 @@ var inputs = [
     {id: "user", cookieName: "username"},
 ];
 
+inputs.forEach(function (input) {
+    var inputElement = document.getElement(input.id);
+
+    var cookieValue = getCookie(input.cookieName);
+    if (cookieValue !== "") {
+        inputElement.value = cookieValue;
+    }
+
+    inputElement.addEventListener("input", function () {
+        setCookie(input.cookieName, inputElement.value, 30);
+    });
+});
+
+var firstName = getCookie ("firstName");
+if (firstName !== "") {
+    document.getElementById("welcome1").innerHTML = "Welcome back, " + firstName + "!<br>";
+    document.getElementById("welcome2").innerHTML = "<a href= '#' id = 'new-user'>NOT " 
+    + firstName + "? Click here to start a new form.</a>";
+
+    document.getElementById("new-user").addEventListener("click", function () {
+        inputs.forEach(function (input) {
+            setCookie(input.cookieName, "", -1);
+        });
+        location.reload();
+    });
+}
+
+document.getElementById("remember-me").addEventListener("change", function () {
+    const rememberMe = this.checked;
+
+    if (!rememberMe) {
+        deleteAllCookies();
+        console.log("All cookies deleted because 'Remember Me is unchecked.");
+    } else {
+        inputs.forEach(function (input) {
+            const inputElement = document.getElementById(input.id);
+            if (inputElement.value.trim() !== "") {
+                setCookie(input.cookieName, inputElement.value, 30);
+            }
+        });
+        console.log("Cookies saved because 'Remember Me' is checked.");
+    }
+});
+
+function deleteAllCookies() {
+    document.cookie.split(";").forEach(function (cookie) {
+        let eqPos = cookie.indexOf("=");
+        let name = eqPos > -1 ? cookie.substring(0, eqPos) : cookie;
+        document.cookie = name  + ";expires=Thu, 01 Jan 1970 00:00:00 UTC;path =/;";
+    });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    const rememberMe = document.getElementById("remember-me").checked;
+
+    if (!rememberMe) {
+        deleteAllCookies();
+    }
+});
