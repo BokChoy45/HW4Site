@@ -496,3 +496,35 @@ document.addEventListener("DOMContentLoaded", function () {
         deleteAllCookies();
     }
 });
+
+//Fetch API
+document.getElementById("medform").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    if(!validateInfo()) {
+        showAlert;
+        return;
+    }
+    submitFormWithFetch();
+});
+
+function submitFormWithFetch() {
+    const form = document.getElementById("medform");
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    fetch("https://jsonplaceholder.typicode.com/posts", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(result => {
+        console.log("Form submitted sucessfully:", result);
+
+        window.location.href = "Hw4thank_you.html";
+    })
+    .catch(error => {
+        console.error("Submission error:", error);
+    })
+}
