@@ -470,7 +470,7 @@ document.getElementById("remember-me").addEventListener("change", function () {
 
     if (!rememberMe) {
         deleteAllCookies();
-        console.log("All cookies deleted because 'Remember Me is unchecked.");
+        console.log("All cookies deleted because 'Remember Me' is unchecked.");
     } else {
         inputs.forEach(function (input) {
             const inputElement = document.getElementById(input.id);
