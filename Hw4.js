@@ -469,7 +469,7 @@ document.getElementById("remember-me").addEventListener("change", function () {
 
     if (!rememberMe) {
         deleteAllCookies();
-        console.log("All cookies deleted because 'Remember Me' is unchecked.");
+        console.log("'Remember Me' is unchecked. All cookied deleted.");
     } else {
         inputs.forEach(function (input) {
             const inputElement = document.getElementById(input.id);
@@ -477,7 +477,7 @@ document.getElementById("remember-me").addEventListener("change", function () {
                 setCookie(input.cookieName, inputElement.value, 30);
             }
         });
-        console.log("Cookies saved because 'Remember Me' is checked.");
+        console.log("'Remember Me' is checked. Cookies are saved");
     }
 });
 
