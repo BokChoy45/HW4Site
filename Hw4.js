@@ -451,10 +451,10 @@ inputs.forEach(function (input) {
     });
 });
 
-var firstName = getCookie ("firstName");
+var firstName = getCookie("firstName");
 if (firstName !== "") {
     document.getElementById("welcome1").innerHTML = "Welcome back, " + firstName + "!<br>";
-    document.getElementById("welcome2").innerHTML = "<a href= '#' id = 'new-user'>NOT " 
+    document.getElementById("welcome2").innerHTML = "<a href= '#' id = 'new-user'>Not " 
     + firstName + "? Click here to start a new form.</a>";
 
     document.getElementById("new-user").addEventListener("click", function () {
