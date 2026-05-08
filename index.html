@@ -15,6 +15,7 @@ Description - This medical form is a assignment for MIS3371. This form is meant 
     </head>                
     
     <body>
+    <header>
         <image src = "med.png" alt ="Patient Medical Form" width = "300" id = "picture"></image></image>
         <h1> Nguyen Healthcare New Patient Form</h1> 
         <p>Today's Date: <span id="date"></span></p>
@@ -22,7 +23,9 @@ Description - This medical form is a assignment for MIS3371. This form is meant 
         <script>
             document.getElementById("date").innerHTML = new Date().toLocaleDateString();
         </script>
+    </header>
     
+    <hr>
     <center>
         <span id = "welcome1"></span>
         <span id = "welcome2"></span>
