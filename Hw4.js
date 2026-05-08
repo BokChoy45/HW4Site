@@ -502,7 +502,7 @@ document.getElementById("medform").addEventListener("submit", function(e) {
     e.preventDefault();
 
     if(!validateInfo()) {
-        showAlert;
+        showAlert();
         return;
     }
     submitFormWithFetch();
