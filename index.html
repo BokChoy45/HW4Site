@@ -16,13 +16,16 @@ Description - This medical form is a assignment for MIS3371. This form is meant 
     
     <body>
     <header>
-        <image src = "med.png" alt ="Patient Medical Form" width = "300" id = "picture"></image></image>
+    <table>
+        <tr>
+        <td><image src = "med.png" alt ="Patient Medical Form" width = "50px" id = "picture"></image></image>
         <h1> Nguyen Healthcare New Patient Form</h1> 
         <p>Today's Date: <span id="date"></span></p>
             
         <script>
             document.getElementById("date").innerHTML = new Date().toLocaleDateString();
-        </script>
+        </script></td></tr>
+        </table>
     </header>
     
     <hr>
