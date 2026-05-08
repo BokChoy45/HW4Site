@@ -454,8 +454,7 @@ inputs.forEach(function (input) {
 var firstName = getCookie("firstName");
 if (firstName !== "") {
     document.getElementById("welcome1").innerHTML = "Welcome back, " + firstName + "!<br>";
-    document.getElementById("welcome2").innerHTML = "<a href= '#' id = 'new-user'>Not " 
-    + firstName + "? Click here to start a new form.</a>";
+    document.getElementById("welcome2").innerHTML = "<a href='#' id='new-user'>Not " + firstName + "? Click here to start a new form.</a>";
 
     document.getElementById("new-user").addEventListener("click", function () {
         inputs.forEach(function (input) {
@@ -485,8 +484,8 @@ document.getElementById("remember-me").addEventListener("change", function () {
 function deleteAllCookies() {
     document.cookie.split(";").forEach(function (cookie) {
         let eqPos = cookie.indexOf("=");
-        let name = eqPos > -1 ? cookie.substring(0, eqPos) : cookie;
-        document.cookie = name  + ";expires=Thu, 01 Jan 1970 00:00:00 UTC;path =/;";
+        let name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;";
     });
 }
 
