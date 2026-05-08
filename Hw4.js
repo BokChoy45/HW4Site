@@ -416,7 +416,7 @@ function getCookie(name) {
     var cookieName = name + "=";
     var cookies = document.cookie.split(';');
 
-    for (var i = 0; i < cookie.length; i++) {
+    for (var i = 0; i < cookies.length; i++) {
         var cookie = cookies[i].trim();
         if (cookie.indexOf(cookieName) == 0) {
             return cookie.substring(cookieName.length, cookie.length);
